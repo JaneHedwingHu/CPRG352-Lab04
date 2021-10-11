@@ -2,6 +2,10 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<% pageContext.setAttribute("newLineChar", "\n"); %>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,13 +17,17 @@
 
         <form action="note" method="GET">
             <h2>View Note</h2>
-            
+            <p><a href="note?create">Create</a></p>
+
+        <c:forEach items="${CONTENTS}" var="note" varStatus="loop">
             <h3>Title:</h3>
-            <span>${CONTENTS.title}</span>
+            <c:out value="${note.title}"/>
             <h3>Contents:</h3>
-            <p>${CONTENTS.contents}</p>
+            <c:out value="${fn:replace(note.contents, newLineChar, '<br />')}" escapeXml="false"/>
+            <p><a href="note?edit=${loop.index}">Edit</a>&nbsp;<a href="note?delete=${loop.index}">Delete</a></p>
+            <hr />
+        </c:forEach>
             
-            <p><a href="note?edit">Edit</a></p>
         </form>
     </body>
 </html>

@@ -10,13 +10,13 @@
     <body>
            <h1>Simple Note Keeper</h1>
 
-        <form action="note" method="POST">
+        <form action="note?save=${NOTE_ID}" method="POST">
             <h2>Edit Note</h2>
             
             <h3>Title:</h3>
             <input type="text" name="EDIT_TITLE" value="${CONTENTS.title}">
             <h3>Contents:</h3>
-            <input type="text" name="EDIT_CONTENTS" value="${CONTENTS.contents}" style="height:100px; width:300px;">
+            <textarea type="text" name="EDIT_CONTENTS" style="height:100px; width:300px;">${CONTENTS.contents}</textarea>
            
             <input type="submit" value="Save">   
     </body>
