@@ -1,7 +1,7 @@
 <%-- 
     Document   : createnote
     Created on : Oct 10, 2021, 8:34:14 PM
-    Author     : jinwe
+    Author     : jinwei
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

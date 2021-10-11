@@ -17,7 +17,7 @@ import models.Note;
 
 /**
  *
- * @author jinwe
+ * @author jinwei
  */
 public class NoteSerializer {
     public static List<Note> readNoteTextFile(BufferedReader br) {
